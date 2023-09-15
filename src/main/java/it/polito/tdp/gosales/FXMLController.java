@@ -12,7 +12,7 @@ import javafx.scene.control.TextArea;
 
 public class FXMLController {
 	
-	Model model;
+	private Model model;
 
     @FXML
     private ResourceBundle resources;
@@ -21,10 +21,13 @@ public class FXMLController {
     private URL location;
 
     @FXML
-    private Button btnCercaPercorso;
+    private Button btnCreaGrafo;
 
     @FXML
-    private Button btnCreaGrafo;
+    private Button btnRicorsione;
+
+    @FXML
+    private Button btnVolumi;
 
     @FXML
     private ComboBox<?> cmbAnno;
@@ -33,19 +36,10 @@ public class FXMLController {
     private ComboBox<?> cmbColore;
 
     @FXML
-    private ComboBox<?> cmbProdotto;
-
-    @FXML
-    private TextArea txtArchi;
-
-    @FXML
-    private TextArea txtResGrafo;
-
-    @FXML
     private TextArea txtResult;
 
     @FXML
-    void doCercaPercorso(ActionEvent event) {
+    void doCalcolaVolumi(ActionEvent event) {
 
     }
 
@@ -55,17 +49,21 @@ public class FXMLController {
     }
 
     @FXML
+    void doRicorsion(ActionEvent event) {
+
+    }
+
+    @FXML
     void initialize() {
-        assert btnCercaPercorso != null : "fx:id=\"btnCercaPercorso\" was not injected: check your FXML file 'Scene.fxml'.";
         assert btnCreaGrafo != null : "fx:id=\"btnCreaGrafo\" was not injected: check your FXML file 'Scene.fxml'.";
+        assert btnRicorsione != null : "fx:id=\"btnRicorsione\" was not injected: check your FXML file 'Scene.fxml'.";
+        assert btnVolumi != null : "fx:id=\"btnVolumi\" was not injected: check your FXML file 'Scene.fxml'.";
         assert cmbAnno != null : "fx:id=\"cmbAnno\" was not injected: check your FXML file 'Scene.fxml'.";
         assert cmbColore != null : "fx:id=\"cmbColore\" was not injected: check your FXML file 'Scene.fxml'.";
-        assert cmbProdotto != null : "fx:id=\"cmbProdotto\" was not injected: check your FXML file 'Scene.fxml'.";
-        assert txtArchi != null : "fx:id=\"txtArchi\" was not injected: check your FXML file 'Scene.fxml'.";
-        assert txtResGrafo != null : "fx:id=\"txtResGrafo\" was not injected: check your FXML file 'Scene.fxml'.";
         assert txtResult != null : "fx:id=\"txtResult\" was not injected: check your FXML file 'Scene.fxml'.";
 
     }
+    
     
     public void setModel(Model model) {
     	this.model = model;

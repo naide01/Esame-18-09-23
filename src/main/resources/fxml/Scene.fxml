@@ -8,17 +8,19 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.gosales.FXMLController">
    <top>
-      <Label text="Esame 17/07/2023 - Turno A" BorderPane.alignment="CENTER">
+      <Label text="Esame 18/09/2023 - Turno Unico" BorderPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="26.0" />
          </font>
+         <BorderPane.margin>
+            <Insets bottom="5.0" top="10.0" />
+         </BorderPane.margin>
       </Label>
    </top>
    <center>
@@ -26,12 +28,13 @@
          <children>
             <GridPane hgap="20.0" prefHeight="94.0" prefWidth="519.0" vgap="5.0">
                <columnConstraints>
-                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="171.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="208.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="104.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="114.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="203.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="165.0" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
@@ -47,7 +50,7 @@
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin></ComboBox>
-                  <Label text="Colore" GridPane.rowIndex="1">
+                  <Label text="Nazione" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
@@ -55,7 +58,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnCreaGrafo" mnemonicParsing="false" onAction="#doCreaGrafo" text="Crea Grafo" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Button fx:id="btnCreaGrafo" mnemonicParsing="false" onAction="#doCreaGrafo" prefHeight="27.0" prefWidth="147.0" text="Crea Grafo" GridPane.columnIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -64,68 +67,14 @@
                      </GridPane.margin>
                   </Button>
                   <ComboBox fx:id="cmbColore" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="btnVolumi" mnemonicParsing="false" onAction="#doCalcolaVolumi" prefHeight="26.0" prefWidth="147.0" text="Calcola Volumi" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button fx:id="btnRicorsione" mnemonicParsing="false" onAction="#doRicorsion" prefHeight="26.0" prefWidth="147.0" text="Retailer Rappresentativi" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                </children>
             </GridPane>
-            <VBox prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <HBox>
-                     <children>
-                        <Label prefHeight="17.0" prefWidth="261.0" text="Vertici e Archi">
-                           <HBox.margin>
-                              <Insets left="100.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Label prefHeight="17.0" prefWidth="240.0" text="Archi di peso massimo">
-                           <HBox.margin>
-                              <Insets left="30.0" />
-                           </HBox.margin>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox>
-                     <children>
-                        <TextArea fx:id="txtResGrafo" editable="false" prefHeight="300.0" prefWidth="300.0">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </TextArea>
-                        <TextArea fx:id="txtArchi" editable="false" prefHeight="300.0" prefWidth="300.0" />
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-            <GridPane hgap="20.0" prefHeight="63.0" prefWidth="519.0" vgap="5.0">
-               <columnConstraints>
-                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="171.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="208.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="208.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Label text="Prodotto" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </Label>
-                  <ComboBox fx:id="cmbProdotto" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </ComboBox>
-                  <Button fx:id="btnCercaPercorso" mnemonicParsing="false" onAction="#doCercaPercorso" text="Cerca Percorso" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-               </children>
-            </GridPane>
-            <TextArea fx:id="txtResult" editable="false" prefHeight="300.0" prefWidth="300.0" />
+            <TextArea fx:id="txtResult" editable="false" prefHeight="300.0" prefWidth="483.0">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" />
+               </VBox.margin></TextArea>
          </children>
          <BorderPane.margin>
             <Insets />
