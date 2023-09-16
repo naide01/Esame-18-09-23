@@ -33,7 +33,7 @@ public class FXMLController {
     private ComboBox<?> cmbAnno;
 
     @FXML
-    private ComboBox<?> cmbColore;
+    private ComboBox<?> cmbNazione;
 
     @FXML
     private TextArea txtResult;
@@ -59,7 +59,7 @@ public class FXMLController {
         assert btnRicorsione != null : "fx:id=\"btnRicorsione\" was not injected: check your FXML file 'Scene.fxml'.";
         assert btnVolumi != null : "fx:id=\"btnVolumi\" was not injected: check your FXML file 'Scene.fxml'.";
         assert cmbAnno != null : "fx:id=\"cmbAnno\" was not injected: check your FXML file 'Scene.fxml'.";
-        assert cmbColore != null : "fx:id=\"cmbColore\" was not injected: check your FXML file 'Scene.fxml'.";
+        assert cmbNazione != null : "fx:id=\"cmbNazione\" was not injected: check your FXML file 'Scene.fxml'.";
         assert txtResult != null : "fx:id=\"txtResult\" was not injected: check your FXML file 'Scene.fxml'.";
 
     }
