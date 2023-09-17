@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 public class FXMLController {
 	
@@ -34,6 +35,9 @@ public class FXMLController {
 
     @FXML
     private ComboBox<?> cmbNazione;
+    
+    @FXML
+    private TextField txtN;
 
     @FXML
     private TextArea txtResult;
@@ -49,7 +53,7 @@ public class FXMLController {
     }
 
     @FXML
-    void doRicorsion(ActionEvent event) {
+    void doRicorsione(ActionEvent event) {
 
     }
 
@@ -60,6 +64,7 @@ public class FXMLController {
         assert btnVolumi != null : "fx:id=\"btnVolumi\" was not injected: check your FXML file 'Scene.fxml'.";
         assert cmbAnno != null : "fx:id=\"cmbAnno\" was not injected: check your FXML file 'Scene.fxml'.";
         assert cmbNazione != null : "fx:id=\"cmbNazione\" was not injected: check your FXML file 'Scene.fxml'.";
+        assert txtN != null : "fx:id=\"txtN\" was not injected: check your FXML file 'Scene.fxml'.";
         assert txtResult != null : "fx:id=\"txtResult\" was not injected: check your FXML file 'Scene.fxml'.";
 
     }
