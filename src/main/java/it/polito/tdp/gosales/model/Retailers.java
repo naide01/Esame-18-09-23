@@ -2,12 +2,14 @@ package it.polito.tdp.gosales.model;
 
 import java.util.Objects;
 
-public class Retailers {
+public class Retailers implements Comparable <Retailers> {
 
 	private int code;
 	private String name;
 	private String type;
 	private String country;
+	
+	private Integer volume = 0;
 	
 	public Retailers(int code, String name, String type, String country) {
 		super();
@@ -94,6 +96,19 @@ public class Retailers {
 	@Override
 	public String toString() {
 		return name;
+	}
+
+	public Integer getVolume() {
+		return volume;
+	}
+
+	public void setVolume(Integer volume) {
+		this.volume = volume;
+	}
+
+	@Override
+	public int compareTo(Retailers r) {
+		return r.getVolume() - this.getVolume();
 	}
 	
 	
